@@ -12,6 +12,7 @@ import jakarta.persistence.Table
 data class ShortUrl (
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @Column(name = "id", columnDefinition = "serial")
     val id: Long? = null,
 
     @Column(nullable = false, unique = true)
