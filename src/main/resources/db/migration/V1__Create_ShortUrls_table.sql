@@ -1,0 +1,5 @@
+CREATE TABLE short_urls (
+id SERIAL PRIMARY KEY,
+original_url TEXT NOT NULL UNIQUE,
+short_code VARCHAR(10) UNIQUE
+);
