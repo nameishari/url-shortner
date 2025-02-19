@@ -1,6 +1,6 @@
 package org.challenge.urlshorteningservice.api.model
 
-data class ShortCodeResponse(
+data class UrlShortnerResponse(
     val originalUrl: String,
     val shortCode: String,
 )

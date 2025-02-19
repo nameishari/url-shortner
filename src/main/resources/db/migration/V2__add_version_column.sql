@@ -1,0 +1,1 @@
+ALTER TABLE short_urls ADD COLUMN version INT DEFAULT 0 NOT NULL;
