@@ -1,5 +1,7 @@
 package org.challenge.urlshorteningservice.api.model
 
+import jakarta.validation.constraints.NotBlank
+
 data class UrlShortnerRequest(
-    val url: String,
+    @NotBlank val url: String,
 )

@@ -50,3 +50,5 @@ Service to shorten urls
 - add alias name to /v1/url-shortner/shorten api request.
 - add distribute caching
 - implement rate limiting 
+- add swagger
+- Maybe change to Hash based base62 approach when generating short code for better security. Right now the project uses database id to base62 conversion approach, assuming we won't be storing any sensitive urls (usually sensitive urls are protected using login or some sort of authentication)
