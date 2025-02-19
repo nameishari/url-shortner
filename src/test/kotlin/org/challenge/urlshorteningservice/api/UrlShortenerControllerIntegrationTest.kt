@@ -107,7 +107,7 @@ class UrlShortenerControllerIntegrationTest {
         val originalUrl = "https://samesame.com"
 
         runBlocking {
-            val task1 = async(Dispatchers.IO) {
+            val task1 = async {
                 mockMvc.post("/v1/url-shortner/shorten") {
                     contentType = MediaType.APPLICATION_JSON
                     content = objectMapper.writeValueAsString(UrlShortnerRequest(url = originalUrl))
@@ -137,7 +137,7 @@ class UrlShortenerControllerIntegrationTest {
         val saved = repository.save(ShortUrl(originalUrl = originalUrl, shortCode = "abc1235", visitCount = 0))
 
         runBlocking {
-            val task1 = async(Dispatchers.IO) {
+            val task1 = async {
                 mockMvc.get("/v1/url-shortner/${saved.shortCode}/expand")
                     .andExpect {
                         status { isOk() }
